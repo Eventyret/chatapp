@@ -10,9 +10,21 @@ import { ChatMessage } from '../models/chat-message.models';
 })
 export class MessageComponent implements OnInit {
 
+  @Input() chatMessage: ChatMessage;
+  userEmail: string;
+  userName: string;
+  timeStamp: date = new Date();
+  messageContent: string;
+  // isOwnMessage: boolean;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(chatMessage = this.chatMessage) {
+    this.messageContent = chatMessage.message;
+    this.timeStamp = chatMessage.timeSent;
+    this.userEmail = chatMessage.email;
+    this.userName = chatMessage.userName;
+    
   }
 
 }
