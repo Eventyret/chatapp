@@ -13,7 +13,7 @@ export class MessageComponent implements OnInit {
   @Input() chatMessage: ChatMessage;
   userEmail: string;
   userName: string;
-  timeStamp: date = new Date();
+  timeStamp: Date = new Date();
   messageContent: string;
   // isOwnMessage: boolean;
 
@@ -24,7 +24,6 @@ export class MessageComponent implements OnInit {
     this.timeStamp = chatMessage.timeSent;
     this.userEmail = chatMessage.email;
     this.userName = chatMessage.userName;
-    
   }
 
 }
