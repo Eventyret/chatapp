@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ChatService } from '../services/chat.service';
 import { Observable } from 'rxjs/Observable';
 import { ChatMessage } from '../models/chat-message.models';
