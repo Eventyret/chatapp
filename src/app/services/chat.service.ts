@@ -26,15 +26,15 @@ export class ChatService {
   }
   sendMessage(msg: string) {
     const timestamp = this.getTimeStamp();
-    const email = this.user.email;
+    // const email = this.user.email; // Waiting until this is wired up
+    const email = "test@test.com";
     this.chatMessages = this.getMessages();
     this.chatMessages.push({
       message: msg,
       timeSent: timestamp,
-      userName: this.userName,
+      // userName: this.userName, // Waiting until this is wired up
+      userName: "Test User",
       email: email });
-
-      console.log('Called Sendmessage()')
   }
 
   getMessages(): FirebaseListObservable<ChatMessage[]>{
