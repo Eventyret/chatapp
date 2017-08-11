@@ -24,3 +24,15 @@ app-chatroom {
 app-navbar {
     width:100%;
 }
+
+app-chat-form {
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    overflow: none;
+}
+
+.message {
+    display: block;
+    height: auto;
+}
