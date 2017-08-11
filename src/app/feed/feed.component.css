@@ -1,6 +1,6 @@
 .feed {
     display: flex;
-    flex-direction: colum;
+    flex-direction: column;
 }
 
 .message {
