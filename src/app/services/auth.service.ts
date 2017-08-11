@@ -30,7 +30,7 @@ export class AuthService {
         })
     }
 
-    singUp(email: string, password: string, displaName: string) {
+    signUp(email: string, password: string, displaName: string) {
       return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
         .then((user)=> {
           this.authState = user;

@@ -9,7 +9,7 @@ import { ChatMessage } from '../models/chat-message.models';
 
 @Injectable()
 export class ChatService {
-  user: any;
+  user: firebase.User;
   chatMessages: FirebaseListObservable<ChatMessage[]>;
   chatMessage: ChatMessage;
   userName: Observable<string>;
@@ -22,19 +22,35 @@ export class ChatService {
        if (auth !== undefined && auth !== null){
         this.user = auth;
       }
+
+      this.getUser().subscribe(a => {
+        this.userName = a.displayName;
+      });
     });
   }
+
+  getUser(){
+    const userId = this.user.uid;
+    const path = `/users/${userId}`;
+    return this.db.object(path);
+  }
+
+  getUsers(){
+    const path = '/users/';
+    return this.db.list(path);
+  }
+
   sendMessage(msg: string) {
     const timestamp = this.getTimeStamp();
-    // const email = this.user.email; // Waiting until this is wired up
-    const email = "test@test.com";
+    const email = this.user.email;
     this.chatMessages = this.getMessages();
     this.chatMessages.push({
       message: msg,
       timeSent: timestamp,
-      // userName: this.userName, // Waiting until this is wired up
-      userName: "Test User",
+      userName: this.userName,
       email: email });
+
+      console.log('Called sendMessage()!');
   }
 
   getMessages(): FirebaseListObservable<ChatMessage[]>{

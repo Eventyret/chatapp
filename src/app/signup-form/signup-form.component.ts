@@ -17,11 +17,11 @@ export class SignupFormComponent {
 
   constructor( private authService: AuthService, private router: Router) { }
 
-  singUp(){
+  signUp(){
     const email = this.email;
     const password = this.password;
     const displayName = this.displayName;
-    this.authService.singUp(email, password, displayName)
+    this.authService.signUp(email, password, displayName)
       .then(resolve => this.router.navigate(['chat']))
       .catch(error => this.errorMsg = error.message);
   }
