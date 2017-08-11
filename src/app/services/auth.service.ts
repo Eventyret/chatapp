@@ -17,10 +17,44 @@ export class AuthService {
       this.user = afAuth.authState;
     }
 
+    get currentUserId(): string {
+      return this.authState !== null ? this.authState.uid: '';
+    }
+
+    login(email: string, password: string) {
+      return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then((resolve) => {
+          const status = 'online';
+          this.setUserStatus(status);
+          this.router.navigate(['chat']);
+        })
+    }
+
     singUp(email: string, password: string, displaName: string) {
       return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
         .then((user)=> {
           this.authState = user;
+          const status = 'online';
+          this.setUserData(email, displaName, status);
         }).catch(error => console.log(error));
     }
+
+    setUserData(email: string, displaName: string, status: string): void {
+      const path = `users/${this.currentUserId}`;
+      const data = {
+        email: email,
+        displaName: displaName,
+        stauts: status
+      };
+
+      this.db.object(path).update(data)
+        .catch(error => console.log(error));
+    }
+    setUserStatus(status: string): void {
+      const path = `users/${this.currentUserId}`;
+      const data = {
+        stauts: status
+      };
+  }
+
 }
