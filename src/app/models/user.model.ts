@@ -1,7 +1,7 @@
 export class User {
     uid?: string;
     email?: string;
-    username?: string;
+    userName?: string;
     password?: string;
     status?: string;
     photoUrl?: string;

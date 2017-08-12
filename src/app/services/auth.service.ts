@@ -30,20 +30,20 @@ export class AuthService {
         })
     }
 
-    signUp(email: string, password: string, displaName: string) {
+    signUp(email: string, password: string, displayName: string) {
       return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
         .then((user)=> {
           this.authState = user;
           const status = 'online';
-          this.setUserData(email, displaName, status);
+          this.setUserData(email, displayName, status);
         }).catch(error => console.log(error));
     }
 
-    setUserData(email: string, displaName: string, status: string): void {
+    setUserData(email: string, displayName: string, status: string): void {
       const path = `users/${this.currentUserId}`;
       const data = {
         email: email,
-        displaName: displaName,
+        displayName: displayName,
         stauts: status
       };
 
