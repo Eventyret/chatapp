@@ -1,28 +1,32 @@
-.messageContainer {
+.messageContainer{
     display: flex;
     height: auto;
     width: 70%;
     min-width: 400px;
     border-radius: 5px;
-    align-items: stretch;
+    align-items:stretch;
     background-color: #eee;
     box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.isOwnMessageContainer {
+.isOwnMessageContainer{
     background-color: #01579B;
 }
 
-.messageData {
+.messageData{
     flex: 1;
     padding: 10px;
     font-size: 0.7em;
 }
 
-.sender {
+.sender{
     display: block;
     color: #222;
     font-weight: bold;
+}
+
+.isOwnSender{
+    color: #E1F5FE;
 }
 
 .timestamp {
@@ -30,11 +34,11 @@
     font-style: italic;
 }
 
-.isOwnTimestamp {
+.isOwnTimestamp{
     color: #4FC3F7;
 }
 
-.messageContent {
+.messageContent{
     height: auto;
     flex: 9;
     background-color: #fff;
@@ -43,7 +47,7 @@
     border-bottom-right-radius: 5px;
 }
 
-.isOwnMessageContent {
+.isOwnMessageContent{
     background-color: #E3F2FD;
     color: #01579B;
 }

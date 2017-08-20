@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
-
 @Component({
   selector: 'app-signup-form',
   templateUrl: './signup-form.component.html',
@@ -15,9 +14,9 @@ export class SignupFormComponent {
   displayName: string;
   errorMsg: string;
 
-  constructor( private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
-  signUp(){
+  signUp() {
     const email = this.email;
     const password = this.password;
     const displayName = this.displayName;

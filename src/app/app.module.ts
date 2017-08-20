@@ -43,7 +43,7 @@ import { environment } from '../environments/environment';
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase) ,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [AuthService, ChatService],
   bootstrap: [AppComponent]

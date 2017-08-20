@@ -1,9 +1,8 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { ChatService } from '../services/chat.service';
 import { Observable } from 'rxjs/Observable';
-import { ChatMessage } from '../models/chat-message.models';
+import { ChatMessage } from '../models/chat-message.model';
 import { FirebaseListObservable } from 'angularfire2/database';
-
 
 @Component({
   selector: 'app-feed',
@@ -16,7 +15,6 @@ export class FeedComponent implements OnInit, OnChanges {
   constructor(private chat: ChatService) { }
 
   ngOnInit() {
-    
     this.feed = this.chat.getMessages();
   }
 
