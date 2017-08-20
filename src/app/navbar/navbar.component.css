@@ -5,7 +5,7 @@
     background-color: #EAEAEB;
 }
 
-#logo{
+/* #logo{
     display: inline-block;
     background: url('../../assets/img/logo.png') no-repeat;
     background-size: cover;
@@ -13,7 +13,7 @@
     width: 60px;
     height: 60px;
     min-width: 60px;
-}
+} */
 
 #heading{
     flex: 4;
